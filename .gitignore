@@ -287,5 +287,14 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 
+# Unity
+*/[Ll]ibrary/
+*/[Tt]emp/
+*/[Oo]bj/
+*/[Bb]uild/
+*/[Bb]uilds/
+*/Assets/AssetStoreTools*
+
 # Other
 */*/metadata/
+*.sln
