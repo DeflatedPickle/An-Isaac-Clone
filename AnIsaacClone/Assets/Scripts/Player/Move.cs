@@ -11,8 +11,8 @@ public class Move : MonoBehaviour {
 	private void Awake() {
 		_rigidbody2D = GetComponent<Rigidbody2D>();
 	}
-	
-	void Update () {
+
+	private void Update () {
 		if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) {
 			var horizontal = Input.GetAxis("Horizontal");
 
