@@ -10,7 +10,7 @@ public class Shoot : MonoBehaviour {
 		if (ShootInterval == 0) {
 			if (Input.GetKey(KeyCode.UpArrow)) {
 				Rigidbody2D tearClone = Instantiate(Tear, transform.position, transform.rotation);
-				tearClone.velocity = transform.up * (ShootSpeed / 2);
+				tearClone.velocity = transform.up * ShootSpeed;
 				ResetInterval();
 			}
 			else if (Input.GetKey(KeyCode.RightArrow)) {
@@ -20,7 +20,7 @@ public class Shoot : MonoBehaviour {
 			}
 			else if (Input.GetKey(KeyCode.DownArrow)) {
 				Rigidbody2D tearClone = Instantiate(Tear, transform.position, transform.rotation);
-				tearClone.velocity = -transform.up * (ShootSpeed / 2);
+				tearClone.velocity = -transform.up * ShootSpeed;
 				ResetInterval();
 			}
 			else if (Input.GetKey(KeyCode.LeftArrow)) {

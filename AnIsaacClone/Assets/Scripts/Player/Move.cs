@@ -13,28 +13,24 @@ public class Move : MonoBehaviour {
 	}
 
 	private void Update () {
-		if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) {
-			var horizontal = Input.GetAxis("Horizontal");
+		var horizontal = Input.GetAxis("Horizontal");
 
-			if (horizontal * _rigidbody2D.velocity.x < MaxSpeed) {
-				_rigidbody2D.AddForce(Vector2.right * horizontal * MoveForce);
-			}
-
-			if (Mathf.Abs(_rigidbody2D.velocity.x) > MaxSpeed) {
-				_rigidbody2D.velocity = new Vector2(Mathf.Sign(_rigidbody2D.velocity.x) * MaxSpeed, _rigidbody2D.velocity.y);
-			}
+		if (horizontal * _rigidbody2D.velocity.x < MaxSpeed) {
+			_rigidbody2D.AddForce(Vector2.right * horizontal * MoveForce);
 		}
-		
-		if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S)) {
-			var vertical = Input.GetAxis("Vertical");
 
-			if (vertical * _rigidbody2D.velocity.y < MaxSpeed) {
-				_rigidbody2D.AddForce(Vector2.up * vertical * MoveForce);
-			}
+		if (Mathf.Abs(_rigidbody2D.velocity.x) > MaxSpeed) {
+			_rigidbody2D.velocity = new Vector2(Mathf.Sign(_rigidbody2D.velocity.x) * MaxSpeed, _rigidbody2D.velocity.y);
+		}
 
-			if (Mathf.Abs(_rigidbody2D.velocity.y) > MaxSpeed) {
-				_rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, Mathf.Sign(_rigidbody2D.velocity.y) * MaxSpeed);
-			}
+		var vertical = Input.GetAxis("Vertical");
+
+		if (vertical * _rigidbody2D.velocity.y < MaxSpeed) {
+			_rigidbody2D.AddForce(Vector2.up * vertical * MoveForce);
+		}
+
+		if (Mathf.Abs(_rigidbody2D.velocity.y) > MaxSpeed) {
+			_rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, Mathf.Sign(_rigidbody2D.velocity.y) * MaxSpeed);
 		}
 	}
 }
