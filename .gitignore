@@ -319,6 +319,7 @@ __pycache__/
 */[Bb]uild/
 */[Bb]uilds/
 */Assets/AssetStoreTools*
+*/Assets/Plugins
 
 # Other
 */*/metadata/
