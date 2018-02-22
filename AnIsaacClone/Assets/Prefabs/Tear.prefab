@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4383836811558960}
   - component: {fileID: 212987721196536372}
   - component: {fileID: 50802343371262104}
+  - component: {fileID: 114759424601656518}
   m_Layer: 0
   m_Name: Tear
   m_TagString: Untagged
@@ -61,6 +62,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &114759424601656518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1476971045460416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa0cab9d5c49a54c9fc10da5fcf6fac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212987721196536372
 SpriteRenderer:
   m_ObjectHideFlags: 1
