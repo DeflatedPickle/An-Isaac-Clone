@@ -7,7 +7,5 @@ public class ChangeDirection : MonoBehaviour {
 
 		var sprite = Resources.Load<Sprite>(string.Format("Sprites/Player/{0}_{1}", spriteName, direction));
 		GetComponent<SpriteRenderer>().sprite = sprite;
-		
-		Debug.Log(direction);
 	}
 }

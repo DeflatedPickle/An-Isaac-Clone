@@ -6,4 +6,6 @@ public class GeneralStats : MonoBehaviour {
 
 	// front, back, left, right
 	public string Direction = "front";
+
+	public bool Shooting = false;
 }

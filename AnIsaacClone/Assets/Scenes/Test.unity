@@ -113,7 +113,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &1104847298
+--- !u!1001 &811841651
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -150,27 +150,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4870397624749396, guid: 0610d26482559d24a9732c159bd7cdc3, type: 2}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114235952770583886, guid: 0610d26482559d24a9732c159bd7cdc3,
-        type: 2}
-      propertyPath: Name
-      value: Cassi
-      objectReference: {fileID: 0}
-    - target: {fileID: 114235952770583886, guid: 0610d26482559d24a9732c159bd7cdc3,
-        type: 2}
-      propertyPath: Health
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 212775097560740446, guid: 0610d26482559d24a9732c159bd7cdc3,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 786aee665b3869b4a9cad539b5dd8de5,
-        type: 3}
-    - target: {fileID: 212775097560740446, guid: 0610d26482559d24a9732c159bd7cdc3,
-        type: 2}
-      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -265,19 +244,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1870569492 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1377909517249318, guid: 0610d26482559d24a9732c159bd7cdc3,
-    type: 2}
-  m_PrefabInternal: {fileID: 1104847298}
---- !u!114 &1870569499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1870569492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db6277e48eae22f4cbe69d2aa5287927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
