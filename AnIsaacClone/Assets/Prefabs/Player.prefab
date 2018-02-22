@@ -151,6 +151,8 @@ MonoBehaviour:
   Name: Cassi
   Health: 100
   Direction: 
+  EyeHeight: 0.238
+  Shooting: 0
 --- !u!114 &114486579962099958
 MonoBehaviour:
   m_ObjectHideFlags: 1

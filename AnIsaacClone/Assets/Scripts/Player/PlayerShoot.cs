@@ -13,13 +13,15 @@ public class PlayerShoot : MonoBehaviour {
 	}
 
 	private void Update () {
+		var playerPosition = new Vector3(transform.position.x, transform.position.y + _stats.EyeHeight, transform.position.z);
+		
 		if (ShootInterval == 0) {
 			_stats.Shooting = false;
 			if (Input.GetKey(KeyCode.UpArrow)) {
 				_stats.Shooting = true;
 				_stats.Direction = "back";
 				
-				var tearClone = Instantiate(Tear, transform.position, transform.rotation);
+				var tearClone = Instantiate(Tear, playerPosition, transform.rotation);
 				tearClone.velocity = transform.up * ShootSpeed;
 				ResetInterval();
 			}
@@ -27,7 +29,7 @@ public class PlayerShoot : MonoBehaviour {
 				_stats.Shooting = true;
 				_stats.Direction = "right";
                 				
-				var tearClone = Instantiate(Tear, transform.position, transform.rotation);
+				var tearClone = Instantiate(Tear, playerPosition, transform.rotation);
 				tearClone.velocity = transform.right * ShootSpeed;
 				ResetInterval();
 			}
@@ -35,7 +37,7 @@ public class PlayerShoot : MonoBehaviour {
 				_stats.Shooting = true;
 				_stats.Direction = "front";
 				
-				var tearClone = Instantiate(Tear, transform.position, transform.rotation);
+				var tearClone = Instantiate(Tear, playerPosition, transform.rotation);
 				tearClone.velocity = -transform.up * ShootSpeed;
 				ResetInterval();
 			}
@@ -43,7 +45,7 @@ public class PlayerShoot : MonoBehaviour {
 				_stats.Shooting = true;
 				_stats.Direction = "left";
 				
-				var tearClone = Instantiate(Tear, transform.position, transform.rotation);
+				var tearClone = Instantiate(Tear, playerPosition, transform.rotation);
 				tearClone.velocity = -transform.right * ShootSpeed;
 				ResetInterval();
 			}
