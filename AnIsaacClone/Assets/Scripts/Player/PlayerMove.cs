@@ -32,5 +32,22 @@ public class PlayerMove : MonoBehaviour {
 		if (Mathf.Abs(_rigidbody2D.velocity.y) > MaxSpeed) {
 			_rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, Mathf.Sign(_rigidbody2D.velocity.y) * MaxSpeed);
 		}
+
+		if (horizontal > 0) {
+			GetComponent<GeneralStats>().Direction = "right";
+		}
+		else if (horizontal < 0) {
+			GetComponent<GeneralStats>().Direction = "left";
+		}
+		else {
+			GetComponent<GeneralStats>().Direction = "front";
+		}
+
+		if (vertical > 0) {
+			GetComponent<GeneralStats>().Direction = "back";
+		}
+		else if (vertical < 0) {
+			GetComponent<GeneralStats>().Direction = "front";
+		}
 	}
 }

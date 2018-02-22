@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 50109735595559226}
   - component: {fileID: 114486579962099958}
   - component: {fileID: 114026691928908312}
+  - component: {fileID: 114235952770583886}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -135,6 +136,17 @@ MonoBehaviour:
   Tear: {fileID: 50802343371262104, guid: 0156425e267fd2a4296c01ea7ccb8ffd, type: 2}
   ShootSpeed: 10
   ShootInterval: 30
+--- !u!114 &114235952770583886
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1377909517249318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4a12dfa0ca9e63459960716e25024ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114486579962099958
 MonoBehaviour:
   m_ObjectHideFlags: 1
