@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Shoot : MonoBehaviour {
+public class PlayerShoot : MonoBehaviour {
 	public Rigidbody2D Tear;
 	public float ShootSpeed = 5f;
 
@@ -9,22 +9,22 @@ public class Shoot : MonoBehaviour {
 	private void Update () {
 		if (ShootInterval == 0) {
 			if (Input.GetKey(KeyCode.UpArrow)) {
-				Rigidbody2D tearClone = Instantiate(Tear, transform.position, transform.rotation);
+				var tearClone = Instantiate(Tear, transform.position, transform.rotation);
 				tearClone.velocity = transform.up * ShootSpeed;
 				ResetInterval();
 			}
 			else if (Input.GetKey(KeyCode.RightArrow)) {
-				Rigidbody2D tearClone = Instantiate(Tear, transform.position, transform.rotation);
+				var tearClone = Instantiate(Tear, transform.position, transform.rotation);
 				tearClone.velocity = transform.right * ShootSpeed;
 				ResetInterval();
 			}
 			else if (Input.GetKey(KeyCode.DownArrow)) {
-				Rigidbody2D tearClone = Instantiate(Tear, transform.position, transform.rotation);
+				var tearClone = Instantiate(Tear, transform.position, transform.rotation);
 				tearClone.velocity = -transform.up * ShootSpeed;
 				ResetInterval();
 			}
 			else if (Input.GetKey(KeyCode.LeftArrow)) {
-				Rigidbody2D tearClone = Instantiate(Tear, transform.position, transform.rotation);
+				var tearClone = Instantiate(Tear, transform.position, transform.rotation);
 				tearClone.velocity = -transform.right * ShootSpeed;
 				ResetInterval();
 			}

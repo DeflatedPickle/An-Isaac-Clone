@@ -112,7 +112,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 1.5
   m_LinearDrag: 2.7
   m_AngularDrag: 2.5
   m_GravityScale: 0
@@ -129,11 +129,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1377909517249318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d56e7679818d36f46b06cb73be0d5965, type: 3}
+  m_Script: {fileID: 11500000, guid: f02cfbea408955f4bb5862278785c7d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveForce: 18
-  MaxSpeed: 10
+  Tear: {fileID: 50802343371262104, guid: 0156425e267fd2a4296c01ea7ccb8ffd, type: 2}
+  ShootSpeed: 10
+  ShootInterval: 30
 --- !u!114 &114486579962099958
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,12 +143,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1377909517249318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ce5842117dba164d86c98e5050e8b92, type: 3}
+  m_Script: {fileID: 11500000, guid: 00929b12b5e5e2643832acf0c33d9f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tear: {fileID: 50802343371262104, guid: 09c5db99794d14e42ad5e4cb413e90ac, type: 2}
-  ShootSpeed: 13
-  ShootInterval: 30
+  MoveForce: 18
+  MaxSpeed: 10
 --- !u!212 &212775097560740446
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -182,7 +182,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2aad1770eed0bd342b7c54228cb2799a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be8c16aa0bdbb434e8b4dc016baaf187, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

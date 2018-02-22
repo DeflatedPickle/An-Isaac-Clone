@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Move : MonoBehaviour {
+public class PlayerMove : MonoBehaviour {
 	[Range(1, 30)]
 	public float MoveForce = 18f;
 	[Range(1, 20)]
