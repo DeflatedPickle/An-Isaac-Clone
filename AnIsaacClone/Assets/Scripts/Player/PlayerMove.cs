@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class PlayerMove : MonoBehaviour {
-	private readonly float _moveForce = 18f;
+	private const float MoveForce = 18f;
 
 	private Rigidbody2D _rigidbody2D;
 
@@ -17,7 +17,7 @@ public class PlayerMove : MonoBehaviour {
 			var horizontal = Input.GetAxis("Horizontal");
 
 			if (horizontal * _rigidbody2D.velocity.x < _stats.MaxSpeed) {
-				_rigidbody2D.AddForce(Vector2.right * horizontal * _moveForce);
+				_rigidbody2D.AddForce(Vector2.right * horizontal * MoveForce);
 			}
 
 			if (Mathf.Abs(_rigidbody2D.velocity.x) > _stats.MaxSpeed) {
@@ -27,7 +27,7 @@ public class PlayerMove : MonoBehaviour {
 			var vertical = Input.GetAxis("Vertical");
 
 			if (vertical * _rigidbody2D.velocity.y < _stats.MaxSpeed) {
-				_rigidbody2D.AddForce(Vector2.up * vertical * _moveForce);
+				_rigidbody2D.AddForce(Vector2.up * vertical * MoveForce);
 			}
 
 			if (Mathf.Abs(_rigidbody2D.velocity.y) > _stats.MaxSpeed) {
