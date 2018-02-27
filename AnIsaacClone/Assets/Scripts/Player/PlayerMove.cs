@@ -1,10 +1,7 @@
 ﻿using UnityEngine;
 
 public class PlayerMove : MonoBehaviour {
-	[Range(1, 30)]
-	public float MoveForce = 18f;
-	[Range(1, 20)]
-	public float MaxSpeed = 10f;
+	private readonly float _moveForce = 18f;
 
 	private Rigidbody2D _rigidbody2D;
 
@@ -16,42 +13,46 @@ public class PlayerMove : MonoBehaviour {
 	}
 
 	private void Update () {
-		var horizontal = Input.GetAxis("Horizontal");
+		if (_stats.CanMove) {
+			var horizontal = Input.GetAxis("Horizontal");
 
-		if (horizontal * _rigidbody2D.velocity.x < MaxSpeed) {
-			_rigidbody2D.AddForce(Vector2.right * horizontal * MoveForce);
-		}
-
-		if (Mathf.Abs(_rigidbody2D.velocity.x) > MaxSpeed) {
-			_rigidbody2D.velocity = new Vector2(Mathf.Sign(_rigidbody2D.velocity.x) * MaxSpeed, _rigidbody2D.velocity.y);
-		}
-
-		var vertical = Input.GetAxis("Vertical");
-
-		if (vertical * _rigidbody2D.velocity.y < MaxSpeed) {
-			_rigidbody2D.AddForce(Vector2.up * vertical * MoveForce);
-		}
-
-		if (Mathf.Abs(_rigidbody2D.velocity.y) > MaxSpeed) {
-			_rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, Mathf.Sign(_rigidbody2D.velocity.y) * MaxSpeed);
-		}
-
-		if (!_stats.Shooting) {
-			if (horizontal > 0) {
-				_stats.Direction = "right";
-			}
-			else if (horizontal < 0) {
-				_stats.Direction = "left";
-			}
-			else {
-				_stats.Direction = "front";
+			if (horizontal * _rigidbody2D.velocity.x < _stats.MaxSpeed) {
+				_rigidbody2D.AddForce(Vector2.right * horizontal * _moveForce);
 			}
 
-			if (vertical > 0) {
-				_stats.Direction = "back";
+			if (Mathf.Abs(_rigidbody2D.velocity.x) > _stats.MaxSpeed) {
+				_rigidbody2D.velocity = new Vector2(Mathf.Sign(_rigidbody2D.velocity.x) * _stats.MaxSpeed, _rigidbody2D.velocity.y);
 			}
-			else if (vertical < 0) {
-				_stats.Direction = "front";
+
+			var vertical = Input.GetAxis("Vertical");
+
+			if (vertical * _rigidbody2D.velocity.y < _stats.MaxSpeed) {
+				_rigidbody2D.AddForce(Vector2.up * vertical * _moveForce);
+			}
+
+			if (Mathf.Abs(_rigidbody2D.velocity.y) > _stats.MaxSpeed) {
+				_rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, Mathf.Sign(_rigidbody2D.velocity.y) * _stats.MaxSpeed);
+			}
+			
+			if (_stats.CanRotate) {
+				if (!_stats.Shooting) {
+					if (horizontal > 0) {
+						_stats.Direction = "right";
+					}
+					else if (horizontal < 0) {
+						_stats.Direction = "left";
+					}
+					else {
+						_stats.Direction = "front";
+					}
+
+					if (vertical > 0) {
+						_stats.Direction = "back";
+					}
+					else if (vertical < 0) {
+						_stats.Direction = "front";
+					}
+				}
 			}
 		}
 	}

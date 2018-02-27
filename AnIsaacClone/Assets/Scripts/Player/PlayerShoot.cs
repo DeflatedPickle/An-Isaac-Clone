@@ -2,9 +2,8 @@
 
 public class PlayerShoot : MonoBehaviour {
 	public Rigidbody2D Tear;
-	public float ShootSpeed = 5f;
-
-	public int ShootInterval = 30;
+	
+	private int _shootCounter = 30;
 
 	private GeneralStats _stats;
 
@@ -15,14 +14,14 @@ public class PlayerShoot : MonoBehaviour {
 	private void Update () {
 		var playerPosition = new Vector3(transform.position.x, transform.position.y + _stats.EyeHeight, transform.position.z);
 		
-		if (ShootInterval == 0) {
+		if (_shootCounter == 0 && _stats.CanShoot) {
 			_stats.Shooting = false;
 			if (Input.GetKey(KeyCode.UpArrow)) {
 				_stats.Shooting = true;
 				_stats.Direction = "back";
 				
 				var tearClone = Instantiate(Tear, playerPosition, transform.rotation);
-				tearClone.velocity = transform.up * ShootSpeed;
+				tearClone.velocity = transform.up * _stats.ShootSpeed;
 				ResetInterval();
 			}
 			else if (Input.GetKey(KeyCode.RightArrow)) {
@@ -30,7 +29,7 @@ public class PlayerShoot : MonoBehaviour {
 				_stats.Direction = "right";
                 				
 				var tearClone = Instantiate(Tear, playerPosition, transform.rotation);
-				tearClone.velocity = transform.right * ShootSpeed;
+				tearClone.velocity = transform.right * _stats.ShootSpeed;
 				ResetInterval();
 			}
 			else if (Input.GetKey(KeyCode.DownArrow)) {
@@ -38,7 +37,7 @@ public class PlayerShoot : MonoBehaviour {
 				_stats.Direction = "front";
 				
 				var tearClone = Instantiate(Tear, playerPosition, transform.rotation);
-				tearClone.velocity = -transform.up * ShootSpeed;
+				tearClone.velocity = -transform.up * _stats.ShootSpeed;
 				ResetInterval();
 			}
 			else if (Input.GetKey(KeyCode.LeftArrow)) {
@@ -46,16 +45,16 @@ public class PlayerShoot : MonoBehaviour {
 				_stats.Direction = "left";
 				
 				var tearClone = Instantiate(Tear, playerPosition, transform.rotation);
-				tearClone.velocity = -transform.right * ShootSpeed;
+				tearClone.velocity = -transform.right * _stats.ShootSpeed;
 				ResetInterval();
 			}
 		}
 		
-		if (ShootInterval > 0)
-			ShootInterval -= 1;
+		if (_shootCounter > 0)
+			_shootCounter -= 1;
 	}
 
 	private void ResetInterval() {
-		ShootInterval = 30;
+		_shootCounter = _stats.ShootInterval;
 	}
 }
