@@ -77,8 +77,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tear: {fileID: 50802343371262104, guid: 09c5db99794d14e42ad5e4cb413e90ac, type: 2}
-  ShootSpeed: 5
-  ShootInterval: 30
 --- !u!114 &114235952770583886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -93,12 +91,18 @@ MonoBehaviour:
   Name: Cassi
   Health: 100
   Direction: front
-  EyeHeight: 0.237
+  EyeHeight: 0.22
+  FeetHeight: -0.43
+  LeftEye: -0.178
+  RightEye: 0.23
   Shooting: 0
-  MaxSpeed: 10
+  MaxSpeed: 17
   CanShoot: 1
   CanMove: 1
   CanRotate: 1
+  ShootSpeed: 5
+  ShootInterval: 25
+  TearHeightDifference: 0.04
 --- !u!114 &114486579962099958
 MonoBehaviour:
   m_ObjectHideFlags: 1

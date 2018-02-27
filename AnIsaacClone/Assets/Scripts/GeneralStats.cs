@@ -8,9 +8,12 @@ public class GeneralStats : MonoBehaviour {
 	public string Direction = "front";
 
 	public float EyeHeight = 0f;
+	public float FeetHeight = 0f;
+	public float LeftEye = 0f;
+	public float RightEye = 0f;
+	
 	public bool Shooting = false;
 	
-	[Range(1, 20)]
 	public float MaxSpeed = 10f;
 
 	public bool CanShoot = true;
@@ -18,6 +21,7 @@ public class GeneralStats : MonoBehaviour {
 	public bool CanRotate = true;
 	
 	public float ShootSpeed = 5f;
-
 	public int ShootInterval = 30;
+
+	public float TearHeightDifference = 0.04f;
 }
