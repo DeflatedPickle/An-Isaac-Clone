@@ -11,21 +11,6 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1377909517249318}
   m_IsPrefabParent: 1
---- !u!1 &1188637786408488
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4929488316874172}
-  m_Layer: 0
-  m_Name: Base
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1377909517249318
 GameObject:
   m_ObjectHideFlags: 0
@@ -47,21 +32,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1939188638310630
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4983678059190280}
-  m_Layer: 0
-  m_Name: Eyes
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &4870397624749396
 Transform:
   m_ObjectHideFlags: 1
@@ -71,36 +41,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4983678059190280}
-  - {fileID: 4929488316874172}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4929488316874172
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1188637786408488}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.64, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4870397624749396}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4983678059190280
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1939188638310630}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.238, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4870397624749396}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50109735595559226
@@ -131,11 +73,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1377909517249318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f02cfbea408955f4bb5862278785c7d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 00c76c03f0eb2444c88c6e68b59a8b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tear: {fileID: 50802343371262104, guid: 0156425e267fd2a4296c01ea7ccb8ffd, type: 2}
-  ShootSpeed: 10
+  Tear: {fileID: 50802343371262104, guid: 09c5db99794d14e42ad5e4cb413e90ac, type: 2}
+  ShootSpeed: 5
   ShootInterval: 30
 --- !u!114 &114235952770583886
 MonoBehaviour:
@@ -145,14 +87,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1377909517249318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4a12dfa0ca9e63459960716e25024ca, type: 3}
+  m_Script: {fileID: 11500000, guid: c95db26a606ae06499334106e0d65d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Cassi
   Health: 100
-  Direction: 
-  EyeHeight: 0.238
+  Direction: front
+  EyeHeight: 0.237
   Shooting: 0
+  MaxSpeed: 10
+  CanShoot: 1
+  CanMove: 1
+  CanRotate: 1
 --- !u!114 &114486579962099958
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -161,11 +107,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1377909517249318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00929b12b5e5e2643832acf0c33d9f75, type: 3}
+  m_Script: {fileID: 11500000, guid: b93959522f6a4404dbd868c2ae62ded7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveForce: 18
-  MaxSpeed: 10
 --- !u!114 &114849061376953010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -174,7 +118,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1377909517249318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db6277e48eae22f4cbe69d2aa5287927, type: 3}
+  m_Script: {fileID: 11500000, guid: a91536b040abbf04ebfda3cfd79e4349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212775097560740446
@@ -211,7 +155,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 786aee665b3869b4a9cad539b5dd8de5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 54983f16ef0e9dc4ba9b2b429d23dfe0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

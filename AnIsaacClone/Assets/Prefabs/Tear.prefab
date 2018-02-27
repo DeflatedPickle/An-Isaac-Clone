@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4383836811558960}
   - component: {fileID: 212987721196536372}
   - component: {fileID: 50802343371262104}
-  - component: {fileID: 114759424601656518}
+  - component: {fileID: 114713086536512794}
   m_Layer: 0
   m_Name: Tear
   m_TagString: Untagged
@@ -62,7 +62,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &114759424601656518
+--- !u!114 &114713086536512794
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1476971045460416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fa0cab9d5c49a54c9fc10da5fcf6fac, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b672098e85a0e5468c064a42ba3113c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212987721196536372
@@ -107,12 +107,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ebbfe3ee9898e1e49839c689323f4d5f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2e7c70b3b64024140aab5fbdc3a9f20c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
