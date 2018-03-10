@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4870397624749396}
   - component: {fileID: 212775097560740446}
-  - component: {fileID: 50109735595559226}
+  - component: {fileID: 54193678432309012}
   - component: {fileID: 114486579962099958}
   - component: {fileID: 114026691928908312}
   - component: {fileID: 114235952770583886}
@@ -45,26 +45,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50109735595559226
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!54 &54193678432309012
+Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1377909517249318}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
+  serializedVersion: 2
   m_Mass: 1.5
-  m_LinearDrag: 2.7
+  m_Drag: 2.7
   m_AngularDrag: 2.5
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_UseGravity: 0
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_Constraints: 112
   m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &114026691928908312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -76,7 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c76c03f0eb2444c88c6e68b59a8b22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tear: {fileID: 50802343371262104, guid: 09c5db99794d14e42ad5e4cb413e90ac, type: 2}
+  Tear: {fileID: 54608509013382460, guid: 09c5db99794d14e42ad5e4cb413e90ac, type: 2}
 --- !u!114 &114235952770583886
 MonoBehaviour:
   m_ObjectHideFlags: 1

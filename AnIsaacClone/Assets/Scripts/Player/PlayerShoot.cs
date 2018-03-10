@@ -4,10 +4,11 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class PlayerShoot : MonoBehaviour {
-	public Rigidbody2D Tear;
+	public Rigidbody Tear;
 	
 	private int _shootCounter = 30;
 	private bool _currentEye = false;
+	private readonly List<float> _tearZ = new List<float>{0.05f, -0.05f};
 
 	private GeneralStats _stats;
 
@@ -56,13 +57,13 @@ public class PlayerShoot : MonoBehaviour {
 		tearClone.velocity = direction * _stats.ShootSpeed;
 
 		if (direction == -transform.right || direction == transform.right) {
-			tearClone.position = new Vector3(tearClone.transform.position.x, tearClone.transform.position.y, Convert.ToInt32(_currentEye));
+			tearClone.position = new Vector3(tearClone.transform.position.x, tearClone.transform.position.y, _tearZ[Convert.ToInt32(_currentEye)]);
 		}
 		else if (direction == transform.up) {
-			tearClone.position = new Vector3(tearClone.transform.position.x, tearClone.transform.position.y, 0);
+			tearClone.position = new Vector3(tearClone.transform.position.x, tearClone.transform.position.y, _tearZ[0]);
 		}
 		else if (direction == -transform.up) {
-			tearClone.position = new Vector3(tearClone.transform.position.x, tearClone.transform.position.y, 1);
+			tearClone.position = new Vector3(tearClone.transform.position.x, tearClone.transform.position.y, _tearZ[1]);
 		}
 		
 		ResetInterval();

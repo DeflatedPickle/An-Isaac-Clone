@@ -3,12 +3,12 @@
 public class PlayerMove : MonoBehaviour {
 	private const float MoveForce = 18f;
 
-	private Rigidbody2D _rigidbody2D;
+	private Rigidbody _rigidbody2D;
 
 	private GeneralStats _stats;
 
 	private void Awake() {
-		_rigidbody2D = GetComponent<Rigidbody2D>();
+		_rigidbody2D = GetComponent<Rigidbody>();
 		_stats = GetComponent<GeneralStats>();
 	}
 
