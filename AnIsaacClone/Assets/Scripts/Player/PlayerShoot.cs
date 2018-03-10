@@ -23,42 +23,20 @@ public class PlayerShoot : MonoBehaviour {
 		
 		if (_shootCounter == 0 && _stats.CanShoot) {
 			_stats.Shooting = false;
+			
 			if (Input.GetKey(KeyCode.UpArrow)) {
-				_stats.Shooting = true;
-				_stats.Direction = "back";
-				
-				var tearClone = Instantiate(Tear, playerPositionVertical, transform.rotation);
-				tearClone.velocity = transform.up * _stats.ShootSpeed;
-				tearClone.position = new Vector3(tearClone.transform.position.x, tearClone.transform.position.y, 1);
-				ResetInterval();
+				ShootTear(transform.up, "back", playerPositionVertical);
 			}
 			else if (Input.GetKey(KeyCode.RightArrow)) {
-				_stats.Shooting = true;
-				_stats.Direction = "right";
-                				
-				var tearClone = Instantiate(Tear, playerPositionHorizontal, transform.rotation);
-				tearClone.velocity = transform.right * _stats.ShootSpeed;
-				tearClone.position = new Vector3(tearClone.transform.position.x, tearClone.transform.position.y, Random.Range(0, 1));
-				ResetInterval();
+				ShootTear(transform.right, "right", playerPositionHorizontal);
 			}
 			else if (Input.GetKey(KeyCode.DownArrow)) {
-				_stats.Shooting = true;
-				_stats.Direction = "front";
-				
-				var tearClone = Instantiate(Tear, playerPositionVertical, transform.rotation);
-				tearClone.velocity = -transform.up * _stats.ShootSpeed;
-				tearClone.position = new Vector3(tearClone.transform.position.x, tearClone.transform.position.y, 0);
-				ResetInterval();
+				ShootTear(-transform.up, "front", playerPositionVertical);
 			}
 			else if (Input.GetKey(KeyCode.LeftArrow)) {
-				_stats.Shooting = true;
-				_stats.Direction = "left";
-				
-				var tearClone = Instantiate(Tear, playerPositionHorizontal, transform.rotation);
-				tearClone.velocity = -transform.right * _stats.ShootSpeed;
-				tearClone.position = new Vector3(tearClone.transform.position.x, tearClone.transform.position.y, Random.Range(0, 1));
-				ResetInterval();
+				ShootTear(-transform.right, "left", playerPositionHorizontal);
 			}
+			
 			_currentEye = !_currentEye;
 		}
 		
@@ -68,5 +46,25 @@ public class PlayerShoot : MonoBehaviour {
 
 	private void ResetInterval() {
 		_shootCounter = _stats.ShootInterval;
+	}
+
+	private void ShootTear(Vector3 direction, string directionString, Vector3 playerPosition) {
+		_stats.Shooting = true;
+		_stats.Direction = directionString;
+				
+		var tearClone = Instantiate(Tear, playerPosition, transform.rotation);
+		tearClone.velocity = direction * _stats.ShootSpeed;
+
+		if (direction == -transform.right || direction == transform.right) {
+			tearClone.position = new Vector3(tearClone.transform.position.x, tearClone.transform.position.y, Convert.ToInt32(_currentEye));
+		}
+		else if (direction == transform.up) {
+			tearClone.position = new Vector3(tearClone.transform.position.x, tearClone.transform.position.y, 0);
+		}
+		else if (direction == -transform.up) {
+			tearClone.position = new Vector3(tearClone.transform.position.x, tearClone.transform.position.y, 1);
+		}
+		
+		ResetInterval();
 	}
 }
