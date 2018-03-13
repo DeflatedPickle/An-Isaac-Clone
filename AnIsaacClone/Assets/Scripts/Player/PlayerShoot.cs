@@ -54,6 +54,7 @@ public class PlayerShoot : MonoBehaviour {
 		_stats.Direction = directionString;
 				
 		var tearClone = Instantiate(Tear, playerPosition, transform.rotation);
+		tearClone.GetComponent<DestroyTear>().Shooter = transform;
 		tearClone.velocity = direction * _stats.ShootSpeed;
 
 		if (direction == -transform.right || direction == transform.right) {
