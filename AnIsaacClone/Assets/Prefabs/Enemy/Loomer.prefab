@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4009577614516242}
   - component: {fileID: 212767285929033300}
+  - component: {fileID: 54885625744972050}
   - component: {fileID: 114194591069452184}
   - component: {fileID: 114617732360299350}
-  - component: {fileID: 54885625744972050}
   m_Layer: 0
   m_Name: Loomer
   m_TagString: Untagged
